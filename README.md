@@ -10,10 +10,12 @@ one, primarily based on [telethon](https://docs.telethon.dev).
 
 ## Installation
 
-Install the latest version from GitHub:  
+Install the latest version from GitHub (recommended because this project is not stable yet):  
+
 `pip3 install git+https://github.com/SharzyL/efb-telegram-slave`
 
 Install from PyPI:
+
 `pip3 install efb-telegram-slave`
 
 To make EFB work, you need to configure some master channel and some slave
@@ -27,7 +29,7 @@ complete the configuration.
 
 By default, configuration file is located in
 `~/.ehforwarderbot/profiles/<your-profile-name>/sharzy.telegram/config.yaml`.
-The following a exemplary configuration. 
+The following is an exemplary configuration. 
 
 ```yaml
 # you should apply for a pair of api_hash and api_id in https://my.telegram.org/

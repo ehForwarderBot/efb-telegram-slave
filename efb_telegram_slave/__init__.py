@@ -185,9 +185,9 @@ class TelegramChannel(SlaveChannel):
 
     async def handle_new_telegram_message(self, event: NewMessage):
         msg: TgMsg = event.message
-        print_color(msg)
         chat_id = get_chat_id(msg.peer_id)
         chat = await self.async_get_chat(chat_id)
+        self.logger.debug(msg)
 
         file = None
         path = None
@@ -220,7 +220,7 @@ class TelegramChannel(SlaveChannel):
             await self.client.download_media(msg, file)
 
         msg_peer = await self.client.get_entity(get_chat_id(msg.from_id or msg.peer_id))
-        print(msg_peer)
+        self.logger.debug(msg_peer)
 
         chat_member = ChatMember(
             chat=chat,

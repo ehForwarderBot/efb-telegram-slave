@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 import sys
 
-if sys.version_info < (3, 6):
-    raise Exception(f'Python 3.6 or higher is required. Your version is {sys.version_info}.')
+if sys.version_info < (3, 8):
+    raise Exception(f'Python 3.8 or higher is required. Your version is {sys.version_info}.')
 
 __version__ = '0.0.0'
 
@@ -14,7 +14,7 @@ setup(
     author='Sharzy L',
     author_mail='me@sharzy.in',
     license='MIT',
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     install_requires=[
         'ehforwarderbot>=2.0.0',
         'telethon',

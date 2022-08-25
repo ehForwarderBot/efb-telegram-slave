@@ -78,7 +78,7 @@ class TelegramChannel(SlaveChannel):
         self.load_config()
         self.loop = asyncio.get_event_loop()
         data_path = efb_utils.get_data_path(self.channel_id)
-        proxy = (self.config['proxy']['protocol'], self.config['proxy']['host'], self.config['proxy']['port'])
+        proxy = (self.config['proxy']['protocol'], self.config['proxy']['host'], self.config['proxy']['port']) if self.config.get('proxy') != None else None
         self.client: TelegramClient = TelegramClient(f'{data_path}/{instance_id}',
                                                      self.config['api_id'],
                                                      self.config['api_hash'],
